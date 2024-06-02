@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomeContentPage";
 import JobsPage from "./pages/JobsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import JobPage,{ jobLoader} from "./pages/JobPage";
