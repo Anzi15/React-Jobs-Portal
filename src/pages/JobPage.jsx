@@ -1,12 +1,14 @@
 // import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
 
-const JobPage = () => {
+const JobPage = ({deleteJob}) => {
+
   // const [job, setJob] = useState(null);
   // const [loading, setLoading] = useState(true);
   const { id } = useParams();
+  const navigate = useNavigate()
 
   // * way to fetch data with the effect (slightly incontinent)
   const job = useLoaderData()
@@ -26,7 +28,15 @@ const JobPage = () => {
   //   fetchJob();
   // }, []);
 
+  const onDeleteClick = (jobID)=>{
+    const confirm = window.confirm("Are you sure to delete this job?");
+    
+    if(!confirm) return
+    
+    deleteJob(jobID)
 
+    navigate("/jobs")
+  }
   return <>
     <section>
         <div className='container m-auto py-6 px-6'>
