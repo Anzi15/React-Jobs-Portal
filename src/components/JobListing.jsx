@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const JobListing = ({job}) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
   let description = job.description;
+
   if(!showFullDescription) description =  description.substring(0, 90) + "...";
   return (
     <div key={job.id} className="bg-white rounded-xl shadow-md relative">
